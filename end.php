@@ -10,22 +10,20 @@
     <body class="css-background">
         <div id="css-mainsection">
             <div id="css-header">
+                <br>
+                <br>
                 <h1 id="title">
-                    Harry Potter Sorting Hat
+                    You rated them all!
                 </h1>
     
                 <img src="assets/images/SortingHatGif.gif" id="sorting_hat_GIF" alt="Harry Potter wearing sorting hat">
-            </div>
 
-            <nav id="css-index_navigation">
-                <a href="addAccount.php" class="css-continuelink">
-                    Add person
-                </a>
-
-                <a href="sortAccounts.php" class="css-continuelink">
-                    Put people in a house
+                <nav id="css-index_navigation">
+                <a href="index.html" class="css-continuelink">
+                    TO THE HOMEPAGE
                 </a>
             </nav>
+            </div>
         </div>                 
     </body>
 </html>
