@@ -8,21 +8,19 @@
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body class="css-background">
-        <div id="css-mainsection">
-            <div id="css-header">
-                <br>
-                <br>
-                <h1 id="title">
+        <div class="css-mainsection css-marginbottom-m css-margintop-m">
+            <div>
+                <h1 class="title yellow">
                     You rated them all!
                 </h1>
     
-                <img src="assets/images/SortingHatGif.gif" id="sorting_hat_GIF" alt="Harry Potter wearing sorting hat">
+                <img src="assets/images/SortingHatGif.gif" id="sorting_hat_GIF" alt="Harry Potter wearing sorting hat" class="css-marginbottom-l">
 
                 <nav id="css-index_navigation">
-                <a href="index.html" class="css-continuelink">
-                    TO THE HOMEPAGE
-                </a>
-            </nav>
+                    <a href="index.html" class="css-continuelink">
+                        TO THE HOMEPAGE
+                    </a>
+                </nav>
             </div>
         </div>                 
     </body>

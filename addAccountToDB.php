@@ -4,17 +4,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Harry Potter Sorting Hat</title>
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body class="css-background">
         <?php
             include "assets/db/connection.php";
-            $firstname = $_GET["account-firstname"];
-            $lastname = $_GET["account-lastname"];
-            $age = $_GET["account-age"];
-            $gender = $_GET["account-gender"];
-            $favouritefood = $_GET["account-favouritefood"];
+            $firstname = $_POST["account-firstname"];
+            $lastname = $_POST["account-lastname"];
+            $age = $_POST["account-age"];
+            $gender = $_POST["account-gender"];
+            $favouritefood = $_POST["account-favouritefood"];
             $startvalue = 0;
             
             
@@ -28,26 +28,24 @@
 
             $sql = "INSERT INTO account (AccountId, Firstname, Lastname, Age, Gender, Favouritefood, Gryffindor, Slytherin, Ravenclaw, Hufflepuff)
                     VALUES ($nextAccountId, '$firstname', '$lastname', $age, '$gender', '$favouritefood', $startvalue, $startvalue, $startvalue, $startvalue);";
-
-
-            mysqli_query($conn, $sql);
+            insertQuery($conn, $sql);
 
             closeConnection($conn);
     
         ?>
 
-        <div id="css-mainsection">
-            <h1 id="title">
+        <div class="css-mainsection css-marginbottom-m css-margintop-m">
+            <h1 class="title yellow">
                 Succes!
             </h1>
             
-            <form method="GET" action="sortAccounts.php">
+            <form method="POST" action="sortAccounts.php">
                 <input type="hidden" id="AcountId" name="AccountId" value="0">
-                <input type="submit" value="SORT PEOPLE" class="form-element submit-button">
+                <input type="submit" value="SORT PEOPLE" class="form-element submit-button red">
             </form>
 
-            <form method="GET" action="addAccount.php">
-            <input type="submit" value="ADD ANOTHER PERSON" class="form-element submit-button">
+            <form method="POST" action="addAccount.php">
+                <input type="submit" value="ADD ANOTHER PERSON" class="form-element submit-button red">
             </form>
             
         </div>

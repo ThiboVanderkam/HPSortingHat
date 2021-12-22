@@ -8,12 +8,12 @@
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body class="css-background">
-        <div id="css-mainsection">
-            <h1 id="title">
+        <div class="css-mainsection css-marginbottom-m css-margintop-m">
+            <h1 class="title css-width-wide yellow">
                     Add account
             </h1>
             <div class="css-form">
-                <form method="GET" action="addAccountToDB.php">
+                <form method="POST" action="addAccountToDB.php">
 
                     <div class="form-element">
                         <label for="account-firstname">
@@ -58,10 +58,9 @@
                         <input type="text" name="account-favouritefood" id="account-favouritefood" required>
                     </div>
     
-                    <input type="submit" value="submit" class="submit-button">
+                    <input type="submit" value="submit" class="submit-button red">
                     <br>
-                </form>
-                
+                </form>               
             </div>
         </div>
     </body>

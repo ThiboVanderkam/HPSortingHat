@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,25 +9,28 @@
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body class="css-background">
-        <div id="css-mainsection">
-            <div id="css-header">
-                <h1 id="title">
+        <div class="css-mainsection css-marginbottom-m css-margintop-m">
+            <div class="css-marginbottom-l">
+                <h1 class="title yellow">
                     Sort the people
                 </h1>
 
                 <?php
+                    
                     include "assets/db/connection.php";
+                    include "assets/function/functions.php";
                     $conn = makeConnectionWithDatabase();
-                    $AccountId = (int)$_GET["AccountId"];
+                    $AccountId = (int)$_POST["AccountId"];
 
                     $getsql = "SELECT AccountId FROM account ORDER BY AccountId DESC LIMIT 1;";
                     $highestAccount = getQuery($conn, $getsql);
                     $highestAccountId = (int)$highestAccount[0]["AccountId"];
                     if ($AccountId > $highestAccountId)
                     {
-                        header("Location: end.php");
+                        header("Location: http://thibovanderkam.be/end.php");
+                        exit;
                     }
-
+                    
                     $getsql = "SELECT Firstname FROM account WHERE AccountId = $AccountId";
                     $firstname = getQuery($conn, $getsql);
                     $getsql = "SELECT Lastname FROM account WHERE AccountId = $AccountId";
@@ -41,23 +45,15 @@
                     closeConnection($conn);
 
                     
-                    ?>
-                    <p class="red attributes">
+                ?>
+                <p class="red attributes">
                     <?php
-                    echo "Name:<br>" . $firstname[0]["Firstname"] . " " . $lastname[0]["Lastname"] . "<br><br>";
-                    echo "Age:<br>" . $age[0]["Age"] . "<br><br>";
-                    echo "Gender:<br>" . $gender[0]["Gender"] . "<br><br>";
-                    echo "Favourite food:<br>" . $favouritefood[0]["Favouritefood"] . "<br><br>";
+                        OutputUserData($firstname, $lastname, $age, $gender, $favouritefood);
                     ?>
-                    <p> 
-                    
-
-
-
-                
+                <p>  
             </div>
 
-            <form method="GET" action="showSorts.php">
+            <form method="POST" action="showSorts.php">
                 <?php echo '<input type="hidden" id="AcountId" name="AccountId" value=' . $AccountId . '>' ?>              
                 <input type="submit" value="Gryffindor" name="house" class="submit-button form-element yellow">
                 <input type="submit" value="Slytherin" name="house" class="submit-button form-element yellow">
@@ -67,3 +63,4 @@
         </div>
     </body>
 </html>
+<?php ob_end(); ?>

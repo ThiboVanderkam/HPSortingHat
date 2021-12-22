@@ -8,17 +8,18 @@
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body class="css-background">
-        <div id="css-mainsection">
-            <div id="css-header">
-                <h1 id="title">
+        <div class="css-mainsection css-marginbottom-m css-margintop-m">
+            <div class="css-marginbottom-m">
+                <h1 class="title yellow">
                     Sort the people
                 </h1>
 
                 <?php
                     include "assets/db/connection.php";
+                    include "assets/function/functions.php";
                     $conn = makeConnectionWithDatabase();
-                    $AccountId = (int)$_GET["AccountId"];
-                    $house = $_GET["house"];
+                    $AccountId = (int)$_POST["AccountId"];
+                    $house = $_POST["house"];
                     
 
                     $valuesql = "SELECT $house FROM account WHERE AccountId = $AccountId;";
@@ -55,43 +56,27 @@
                     $Ravenclaw = getQuery($conn, $getsql);
                     $RavenclawVotes = ((int)$Ravenclaw[0]["Ravenclaw"]) + 1;
 
-                    ?>
-                    <p class="red attributes">
+                ?>
+                <p class="red attributes">
                     <?php
-                    echo "Name:<br>" . $firstname[0]["Firstname"] . " " . $lastname[0]["Lastname"] . "<br><br>";
-                    echo "Age:<br>" . $age[0]["Age"] . "<br><br>";
-                    echo "Gender:<br>" . $gender[0]["Gender"] . "<br><br>";
-                    echo "Favourite food:<br>" . $favouritefood[0]["Favouritefood"] . "<br><br>";
+                        OutputUserData($firstname, $lastname, $age, $gender, $favouritefood);
                     ?>
-                    <p>
-                    <?php
-                    $GryffindorPercentage = round($GryffindorVotes/($GryffindorVotes + $SlytherinVotes + $HufflepuffVotes + $RavenclawVotes) * 100, 0) . "%";
-                    $SlytherinPercentage = round($SlytherinVotes/($GryffindorVotes + $SlytherinVotes + $HufflepuffVotes + $RavenclawVotes) * 100, 0) . "%";
-                    $HufflepuffPercentage = round($HufflepuffVotes/($GryffindorVotes + $SlytherinVotes + $HufflepuffVotes + $RavenclawVotes) * 100, 0) . "%";
-                    $RavenclawPercentage = round($RavenclawVotes/($GryffindorVotes + $SlytherinVotes + $HufflepuffVotes + $RavenclawVotes) * 100, 0) . "%";
+                <p>
 
-                    ?>
-                    <p class="red attributes">
+                <p class="red attributes">
                     <?php
-                    echo "Gryffindor: <br>" . $GryffindorPercentage . "<br>";
-                    echo "Slytherin: <br>" . $SlytherinPercentage . "<br>";
-                    echo "Hufflepuff: <br>" . $HufflepuffPercentage . "<br>";
-                    echo "Ravenclaw: <br>" . $RavenclawPercentage . "<br><br></p>";
+                        OutputResults($GryffindorVotes, $SlytherinVotes, $HufflepuffVotes, $RavenclawVotes);
                     ?>
-                    <p> 
-                    <?php
+                <p> 
+                    
+                <?php
                     closeConnection($conn);
-                    
-                    
-                    
-
                     $AccountId = $AccountId + 1;
-
                 ?>
                 
             </div>
 
-                <form method="GET" action= sortAccounts.php>               
+                <form method="POST" action= sortAccounts.php>               
                     <?php echo '<input type="hidden" id="AcountId" name="AccountId" value=' . $AccountId . '>' ?>              
                     <input type="submit" value="Next Person" class="submit-button form-element yellow">                 
                 </form>

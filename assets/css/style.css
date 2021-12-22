@@ -3,15 +3,13 @@
     background-size: 100%;
 }
 
-#css-mainsection {
+.css-mainsection {
     display: flex;
     justify-content: center;
     width: 800px;
     margin: 0 auto;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     text-align: center;
     background-image: url("../images/hpdrawings.jpeg");
@@ -20,21 +18,13 @@
     display: block;
 }
 
-#title {
-    color: #7F0909;
+.title {
     font-family: "Lucida Handwriting", cursive;
-    background-color: #FFC500;
     border-width: 3px;
     border-style: solid;
     border-radius: 10px;
-    border-color: b#7F0909;
-    margin-left: 25px;
-    margin-right: 25px;
+    border-color:#7F0909;
     font-size: 50px;
-}
-
-#css-header {
-    margin-bottom: 100px;
 }
 
 #css-index_navigation {
@@ -83,8 +73,6 @@
     padding-bottom: 20px;
     width: 80%;
     text-align: center center;
-    background-color: #7F0909;
-    color: #FFC500;
     font-family: "Lucida Handwriting", cursive;
     border-radius: 10px;
     text-decoration: none;
@@ -119,3 +107,29 @@
     margin-left: 35%;
     margin-right: 35%;
 }
+
+.css-width-wide {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.css-marginbottom-l {
+    margin-bottom: 100px;
+}
+
+.css-marginbottom-m {
+    margin-bottom: 50px;
+}
+
+.css-marginbottom-s {
+    margin-bottom: 25px;
+}
+
+.css-margintop-s {
+    margin-top: 25px;
+}
+
+.css-margintop-m {
+    margin-top: 50px;
+}
+
