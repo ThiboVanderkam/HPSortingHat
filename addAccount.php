@@ -15,6 +15,7 @@
             <div class="css-form">
                 <form method="POST" action="addAccountToDB.php">
 
+                    <!-- Firstname -->
                     <div class="form-element">
                         <label for="account-firstname">
                             First name
@@ -23,6 +24,7 @@
                         <input type="text" name="account-firstname" id="account-firstname" required>
                     </div>
 
+                    <!-- Lastname -->                    
                     <div class="form-element">
                         <label for="account-lastname">
                             Last name
@@ -31,6 +33,7 @@
                         <input type="text" name="account-lastname" id="account-lastname" required>
                     </div>
 
+                    <!-- Age -->
                     <div class="form-element">
                         <label for="account-age">
                             Age
@@ -39,6 +42,7 @@
                         <input type="number" name="account-age" id="account-age" required>
                     </div>
 
+                    <!-- Gender -->
                     <div class="form-element">
                         <input type="radio" value="male" name="account-gender" id="account-gender-male">
                         <label for="account-gender-male">Male</label>
@@ -50,6 +54,7 @@
                         <label for="account-gender-other">Other</label>
                     </div>
 
+                    <!-- Favourite food -->
                     <div class="form-element">
                         <label for="account-favouritefood">
                             Favourite food

@@ -1,9 +1,9 @@
 <?php
     function makeConnectionWithDatabase() {
-        $hostname = "localhost";
-        $dbUser = "sortinghatAdmin";
+        $hostname = "ID362561_sortinghat.db.webhosting.be";
+        $dbUser = "ID362561_sortinghat";
         $dbPassword = "WebFundamentals2021";
-        $dbName = "sortinghat";
+        $dbName = "ID362561_sortinghat";
         $port = 3306;
 
         $conn = mysqli_connect($hostname, $dbUser, $dbPassword, $dbName, $port);

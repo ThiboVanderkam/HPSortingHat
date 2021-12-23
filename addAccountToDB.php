@@ -23,9 +23,11 @@
             $getsql = "SELECT AccountId FROM account ORDER BY AccountId DESC LIMIT 1;";
             $highestAccountId = getQuery($conn, $getsql);
 
+            //Give the new user an AccountId
             $highestAccountId = (int)$highestAccountId[0]["AccountId"];
             $nextAccountId = $highestAccountId + 1;
 
+            //Insert user data in database
             $sql = "INSERT INTO account (AccountId, Firstname, Lastname, Age, Gender, Favouritefood, Gryffindor, Slytherin, Ravenclaw, Hufflepuff)
                     VALUES ($nextAccountId, '$firstname', '$lastname', $age, '$gender', '$favouritefood', $startvalue, $startvalue, $startvalue, $startvalue);";
             insertQuery($conn, $sql);
@@ -40,7 +42,7 @@
             </h1>
             
             <form method="POST" action="sortAccounts.php">
-                <input type="hidden" id="AcountId" name="AccountId" value="0">
+                <input type="hidden" id="AcountId" name="AccountId" value="0"> <!-- 0 is used to start with the first user -->
                 <input type="submit" value="SORT PEOPLE" class="form-element submit-button red">
             </form>
 

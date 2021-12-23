@@ -1,7 +1,8 @@
 .css-background {
     background-image: url("../images/hogwarts.jpg");
-    background-size: 100%;
-}
+    background-size: cover;
+    height: 100vh;
+} 
 
 .css-mainsection {
     display: flex;

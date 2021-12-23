@@ -22,6 +22,7 @@
                     $house = $_POST["house"];
                     
 
+                    //Add 1 to the house that the user chose
                     $valuesql = "SELECT $house FROM account WHERE AccountId = $AccountId;";
                     $value = getQuery($conn, $valuesql);
                     $newValue = ((int)$value[0][$house]) + 1;
@@ -29,6 +30,7 @@
                     $sql = "UPDATE account SET $house = $newValue WHERE AccountId = $AccountId;";
                     mysqli_query($conn, $sql);
 
+                    //Get all the data from the users
                     $getsql = "SELECT Firstname FROM account WHERE AccountId = $AccountId;";
                     $firstname = getQuery($conn, $getsql);
                     $getsql = "SELECT Lastname FROM account WHERE AccountId = $AccountId;";
@@ -71,7 +73,7 @@
                     
                 <?php
                     closeConnection($conn);
-                    $AccountId = $AccountId + 1;
+                    $AccountId = $AccountId + 1; //Increment the AccountId so the next person will be displayed
                 ?>
                 
             </div>

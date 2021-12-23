@@ -22,15 +22,17 @@
                     $conn = makeConnectionWithDatabase();
                     $AccountId = (int)$_POST["AccountId"];
 
+                    //Check if there is a next person
                     $getsql = "SELECT AccountId FROM account ORDER BY AccountId DESC LIMIT 1;";
                     $highestAccount = getQuery($conn, $getsql);
-                    $highestAccountId = (int)$highestAccount[0]["AccountId"];
+                    $highestAccountId = (int)$highestAccount[0]["AccountId"];                
                     if ($AccountId > $highestAccountId)
                     {
                         header("Location: http://thibovanderkam.be/end.php");
                         exit;
                     }
                     
+                    //Get user data
                     $getsql = "SELECT Firstname FROM account WHERE AccountId = $AccountId";
                     $firstname = getQuery($conn, $getsql);
                     $getsql = "SELECT Lastname FROM account WHERE AccountId = $AccountId";
