@@ -2,15 +2,15 @@
 Final assignment for Web Fundamentals and Databases
 
 Explaination of the files:
-    assets/
-        css/
+    assets
+        css
             style.css: Styling for the website      
-        db/
+        db
             connection.php: Contains functions used to communicate with the database
             sortinghatinit.sql: Initialises the database
-        function/
+        function
             functions.php: Contains functions to make output cleaner
-        images/
+        images
             Contains images used on the website
     
     addAccount.php: Asks for input from the user
