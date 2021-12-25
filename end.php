@@ -17,7 +17,7 @@
                 <img src="assets/images/SortingHatGif.gif" id="sorting_hat_GIF" alt="Harry Potter wearing sorting hat" class="css-marginbottom-l">
 
                 <nav id="css-index_navigation">
-                    <a href="index.html" class="css-continuelink">
+                    <a href="index.php" class="css-continuelink">
                         TO THE HOMEPAGE
                     </a>
                 </nav>

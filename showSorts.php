@@ -44,19 +44,19 @@
                     
                     $getsql = "SELECT Gryffindor FROM account WHERE AccountId = $AccountId;";
                     $Gryffindor = getQuery($conn, $getsql);
-                    $GryffindorVotes = ((int)$Gryffindor[0]["Gryffindor"]) + 1;
+                    $GryffindorVotes = ((int)$Gryffindor[0]["Gryffindor"]);
 
                     $getsql = "SELECT Slytherin FROM account WHERE AccountId = $AccountId;";
                     $Slytherin = getQuery($conn, $getsql);
-                    $SlytherinVotes = ((int)$Slytherin[0]["Slytherin"]) + 1;
+                    $SlytherinVotes = ((int)$Slytherin[0]["Slytherin"]);
 
                     $getsql = "SELECT Hufflepuff FROM account WHERE AccountId = $AccountId;";
                     $Hufflepuff = getQuery($conn, $getsql);
-                    $HufflepuffVotes = ((int)$Hufflepuff[0]["Hufflepuff"]) + 1;
+                    $HufflepuffVotes = ((int)$Hufflepuff[0]["Hufflepuff"]);
 
                     $getsql = "SELECT Ravenclaw FROM account WHERE AccountId = $AccountId;";
                     $Ravenclaw = getQuery($conn, $getsql);
-                    $RavenclawVotes = ((int)$Ravenclaw[0]["Ravenclaw"]) + 1;
+                    $RavenclawVotes = ((int)$Ravenclaw[0]["Ravenclaw"]);
 
                 ?>
                 <p class="red attributes">
